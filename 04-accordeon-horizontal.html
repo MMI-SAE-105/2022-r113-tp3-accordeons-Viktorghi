@@ -4,9 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Accordéon horizontal</title>
   </head>
   <body>
     <h1>Accordéon horizontal</h1>
-  </body>
-</html>
+    <ul id="accordeon" x-data="{isOpen:0}">
+      <li :class="{actif:isOpen === 0,}">
+        <figure @click="isOpen = 0">
+          <img src="fbi-fbi-open-the-door.gif" alt="fbi" width="102">
+          <figcaption>
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+          </figcaption>
+        </figure>
+      </li>
+      <li :class="{actif:isOpen === 1,}">
+        <figure  @click="isOpen = 1">
+          <img src="dde33bcdec596ff41f6013ab6b3fe3d5.jpg" alt="cat" width="102">
+          <figcaption>
+            <h3>Accusantium, voluptatem non.</h3>
+            <p>Iusto quidem expedita nulla ex necessitatibus?</p>
+          </figcaption>
+        </figure>
+      </li>
+      <li :class="{actif:isOpen === 2,}">  
+        <figure @click="isOpen = 2"> 
+          <img src="téléchargement.png" alt="nyan cat" width="102">
+          <figcaption>
+            <h3>Sint, consequatur cumque.</h3>
+            <p>Similique, hic. Nostrum harum tempore aliquid.</p>
+          </figcaption>
+        </figure>
+      </li>
