@@ -4,9 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Onglets</title>
   </head>
-  <body>
+  <body x-data="{isOpen:0}">
     <h1>Onglets</h1>
-  </body>
-</html>
+    <ul role="tablist"  id="onglet" class="ul" >
+      <li role="tab" id="onglet-1" tabindex="0"  @click="isOpen = 0" aria-selected="true" aria-controls="panneau-1" class="opac":class="{actifli:isOpen === 0,}">
+        Onglets 1
+      </li>
+      <li role="tab" id="onglet-2" tabindex="-1":class="{actifli:isOpen === 1,}" @click="isOpen = 1" aria-selected="false" aria-controls="panneau-2"  class="opac" :class="{actifli:isOpen === 1,}">
+        Onglets 2
+      </li>
+      <li role="tab" @click="isOpen = 2" class="opac" :class="{actifli:isOpen === 2,}">  
+       Onglet 3
+      </li>
+    </ul>
+    <div>
+    <div role="tabpanel":class="{actif:isOpen === 0,}" class="onglet">
+     <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, voluptas. Aut saepe, fugiat nulla neque eos debitis voluptate, aspernatur eligendi quod veniam earum tempore facere itaque nihil. Nostrum, id recusandae!
+     </p>
+    </div>
+    <div role="tabpanel" :class="{actif:isOpen === 1,}" class="onglet">
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+     </div>
+    <div role="tabpanel"  class="onglet" :class="{actif:isOpen === 2,}"> 
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+    </div>
+  </div>
+ </body>
